@@ -1,0 +1,802 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+}
+
+.main{
+    height:100vh;
+    display: grid;
+    grid-template-rows:repeat(auto, 1fr);
+    grid-template-columns: repeat(1fr , auto);
+    grid-gap: 5px;
+    grid-template-areas:"sidebar main-contain"
+                        "music-player music-player";
+}
+
+.sidebar{
+    grid-area: sidebar;
+    height: 85vh;
+    width:140px;
+    position:fixed;
+    left:0px;
+    background-color: rgb(0, 0, 0); 
+    margin: .3rem;
+    border-radius:.2rem; 
+  
+}
+
+.sidebar .nav{
+    width: 100%;
+    height:17%;
+    position: absolute;
+    background-color:#121212;
+    border-radius: .2rem;
+    margin-bottom: .3rem;
+}
+
+.sidebar .nav ul{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.sidebar .nav ul li{
+   list-style: none;
+   position: relative;
+   top: -14px;
+   left: -28px;
+   line-height:1.3rem;
+
+}
+
+.sidebar .nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size:.47rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing:0.2px ;
+}
+
+.sidebar .nav ul li:nth-child(2){
+    opacity: 0.5;
+}
+
+.sidebar .nav ul li:nth-child(2):hover{
+    opacity: 1;
+}
+
+.sidebar .nav ul li i{
+    color:white;
+    font-size:.65rem;
+    margin-right: .3rem;
+}
+
+.sidebar .library{
+    height: 82%;
+    width: 100%;
+    background-color:#121212;
+    position: relative;
+    top:58.7px;
+    border-radius: .2rem;
+}
+
+.sidebar .library  .library-icon{
+    height: 11%;
+    background-color: #121212;
+    border-radius: .2rem;
+   
+}
+
+
+
+.sidebar .library  .library-icon a{
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: .45rem;
+    font-weight: bold;
+    position: absolute;
+    top: 11px;
+    left: 30px;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.sidebar .library  .library-icon a:hover{
+    opacity: 1;
+}
+
+.sidebar .library  .library-icon a img{
+    width: 11px;
+    position: absolute;
+    left:-18px;
+    top:-2px;
+}
+
+.sidebar .library  .library-icon .plus-icon i{
+    color: white;
+    font-size: 9px;
+    position: absolute;
+    right:9px;
+    top: 8px;
+    opacity: 0.5;
+    transition: all 0.5s;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.sidebar .library  .library-icon .plus-icon:hover i{
+    opacity: 1;
+    background-color:#2a2a2a92;
+}
+
+.sidebar .library .create-playlist{
+    height: 48%;
+    width: 100%;
+    background-color: #121212;
+    overflow-y:scroll;
+    position:relative;
+    top:0px;
+    
+
+}
+
+.sidebar .library .create-playlist::-webkit-scrollbar
+{
+   display: none;
+}
+
+
+.sidebar .library .create-playlist .create-playlist-first-card , .create-playlist-sec-card{
+    width:94%;
+    height:55%;
+    background-color:#242424;
+    position: relative;
+    left: 4px;
+    top: 0px;
+    margin: .25rem 0;
+    border-radius: .2rem;
+    line-height: 0.23rem;
+}
+
+
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain , .sidebar .library .create-playlist .create-playlist-sec-card .contain 
+{
+    position: absolute;
+    top: 0px;
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain h5 , .create-playlist-sec-card .contain h5{
+    font-size:.47rem;
+    color: white;
+    padding-left: 0.6rem;
+
+
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain h5::first-letter{
+    text-transform: capitalize;
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain p , .create-playlist-sec-card .contain p{
+    font-size:.40rem;
+    font-weight: bold;
+    color: white;
+    padding-left: 0.6rem;
+
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain .btn ,  .create-playlist-sec-card .contain .btn{
+    width:60%;
+    height: 15px;
+    background-color: white;
+    border-radius:1rem ;
+    padding: .15rem .4rem;
+    margin-left: .6rem;
+    margin-top: .8rem;
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain .btn:hover ,  .create-playlist-sec-card .contain .btn:hover{
+     transform: scale(1.05);
+}
+
+.sidebar .library .create-playlist .create-playlist-first-card .contain .btn a , .create-playlist-sec-card .contain .btn a{
+    text-decoration: none;
+    color: black;
+    font-size: .40rem;
+    font-weight:bold;
+}
+
+.sidebar .library .create-playlist .create-playlist-sec-card{
+    height:70% ;
+}
+
+.sidebar .library .create-playlist .create-playlist-sec-card{
+    position: relative;
+    top:8px;
+}
+
+.sidebar .library .create-playlist .create-playlist-sec-card .contain h5 , .sidebar .library .create-playlist .create-playlist-sec-card .contain p{
+    line-height: .5rem;
+}
+
+.sidebar .library .create-playlist .create-playlist-sec-card .contain h5 
+{
+    margin: .7rem 0;
+}
+
+.sidebar .library .create-playlist .create-playlist-sec-card .contain .btn{
+    width: 50%;
+    padding:.1rem .26rem;
+}
+
+.sidebar .library .table{
+   margin:.6rem .3rem;
+}
+
+.sidebar .library .table tr{
+    line-height: .55rem;
+}
+
+.sidebar .library .table a{
+    color: white;
+    font-size:.33rem;
+    margin:0 .2rem ;
+    text-decoration: none;
+}
+
+.sidebar .library .table a:hover{
+    border-bottom: 0.5px solid white ;
+}
+
+.sidebar .library .lang-logo{
+    width: 35%;
+    height: 15px;
+    background-color:transparent;
+    border: white solid 0.5px;
+    display: flex;
+    border-radius: 20px;
+    padding: .2rem;
+    margin: 1.1rem .8rem;
+
+}
+
+.sidebar .library .lang-logo:hover{
+    border:white solid 1px;
+    width: 36%;
+    height: 16px;
+}
+
+.sidebar .library .lang-logo a{
+    color:white;
+    font-size: .44rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 .1rem;
+}
+
+.sidebar .library .lang-logo a i{
+    font-size: .5rem;
+    
+}
+
+
+
+ /*-------------------------------------------------------- sidebar Complete------------------------------------------  */
+
+
+
+ .main-contain{
+    width:80vw;
+    height:85.5vh;
+    grid-area:main-contain ;
+    background: #121212;
+    position:absolute;
+    left:144px;
+    overflow: scroll;
+    margin: .3rem;
+    border-radius:.2rem;    
+}
+
+.main-contain::-webkit-scrollbar{
+    display: none;
+}
+
+.main-contain .upper-navbar
+{   width: 100%;
+    height: 32px;
+    position:sticky;
+    top:0;
+    background-color: #090909ed;
+    z-index:1;
+}
+
+
+
+
+.main-contain .upper-navbar .icon{
+    display: flex;
+    font-size: .7rem;
+    color: rgba(255, 255, 255, 0.532);
+    gap: 5px;
+    position: relative;
+    top:8px;
+    left: 13px;
+    
+}
+
+.main-contain .upper-navbar .icon .right-icon , .main-contain .upper-navbar .icon .left-icon{
+    background-color:rgba(0, 0, 0, 0.969);
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.main-contain .upper-navbar .icon .right-icon:hover , .main-contain .upper-navbar .icon .left-icon:hover
+{
+    color: white;
+}
+
+.main-contain .upper-navbar .log-in-btn{
+    width: 3.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: .0rem 1rem;
+    position:absolute;
+    right: 15px;
+    top: 3px;
+}
+
+.main-contain .upper-navbar .log-in-btn a{
+    text-decoration: none;
+    font-size: .45rem;
+    color: #000000;
+    font-weight: bold;
+}
+
+.main-contain .upper-navbar .log-in-btn:hover ,.main-contain .upper-navbar .log-in-btn:hover a{
+    transform: scale(1.05);
+    font-weight:bolder;
+}
+
+.main-contain .upper-navbar .sign-up-btn a
+{  
+  text-decoration: none;
+  font-size: .45rem;
+  font-weight: bold;  
+  position: absolute;
+  right: 85px;
+  top: 12px;
+  color: rgb(255, 255, 255);
+  opacity: 0.5;
+  
+
+}
+
+.main-contain .upper-navbar .sign-up-btn a::first-letter{
+    text-transform: capitalize;
+}
+
+.main-contain .upper-navbar .sign-up-btn a:hover
+{
+    opacity: 1;
+}
+
+
+
+/* -------------------------------------------------------music-row-start------------------------------------------------------------- */
+
+
+
+.main-contain .music-box-1st-row{
+    width: 100%;
+    height:190px;
+    background-color: #121212;
+    position: relative;
+    top: 0px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    
+
+}
+.main-contain .music-box-1st-row .heading{
+    display: flex;
+    position: relative;
+    top: -10px;
+    left: 10px;
+    letter-spacing: -.41px;
+
+
+}
+
+.main-contain .music-box-1st-row .heading h3{
+  color: white;
+  font-size: .7rem;
+
+}
+
+.main-contain .music-box-1st-row .heading h3::first-letter{
+    text-transform: capitalize;
+}
+
+.main-contain .music-box-1st-row .heading h6{
+    position: absolute;
+    right: -505px;
+    font-size: .43rem;
+    color: rgba(255, 255, 255, 0.438);
+}
+
+.main-contain .music-box-1st-row .heading h6::first-letter{
+    text-transform: capitalize;
+}
+
+.main-contain .music-box-1st-row .heading h6:hover{
+    border-bottom: 0.9px solid rgba(255, 255, 255, 0.438);
+}
+
+
+.main-contain .music-box-1st-row .music-card 
+{ 
+   display: flex;
+}
+
+.main-contain .music-box-1st-row .music-card .card{
+      width: 110px;
+      height: 150px;
+      background-color:rgb(24, 24, 24);
+      position: relative;
+      top: -10px;
+      left: 12px;
+      border-radius: .2rem;
+      margin-right: .7rem;
+      transition: all .5s;
+     
+    }
+
+    .main-contain .music-box-1st-row .music-card .card:hover{
+        background-color:#242424;
+    }
+
+   
+    .main-contain .music-box-1st-row .music-card .card .image{
+        width: 95px;
+        height: 92px;
+        background-color:#121212;
+        margin: .5rem .5rem;
+        border-radius: .15rem;
+        overflow:hidden;
+        box-shadow: 1px 1px 15px .51px black;
+        
+    }
+
+    
+    .main-contain .music-box-1st-row .music-card .card .image img{
+        width: 100%;
+        position:relative;
+        top: -30px;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .image .spotify-icon {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        left:10px;
+        z-index:1;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .image .spotify-icon i{
+        color: white;
+        font-size:.45rem;
+        position: absolute;
+        top: -9px;
+        left: 2px;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .image .spotify-icon h3{
+        color: white;
+        font-size: .5rem;
+        position: absolute;
+        right: -89px;
+        top: -18px;  
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .image .play-btn{
+        width:25px;
+        height:25px;
+        background-color:rgb(48, 224, 60);
+        border-radius: 50%;
+        position: relative;
+        left:65px;
+        bottom: -70px;
+        z-index: 1;
+        transition: all .25s;
+        opacity: 0;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card:hover .image .play-btn{
+       bottom: -62px;
+       opacity: 1;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .image .play-btn i{
+        color: black;
+        font-size: .75rem;
+        position: relative;
+        left :9px;
+        top: 1px;
+        
+    }
+
+
+    .main-contain .music-box-1st-row .music-card .card .about-music h4{
+      color: white;
+      font-size: .5rem;
+      margin-top:.5rem ;
+      margin-left:.45rem;
+      margin-bottom: 0;
+    }
+
+    .main-contain .music-box-1st-row .music-card .card .about-music p{
+        color: rgba(255, 255, 255, 0.658);
+        font-size:.4rem ;
+        margin-top:.19rem ;
+        margin-left:.45rem;
+        line-height: .7rem;
+    }
+
+    /* -----------------------------------------------------------about-company-links started-------------------------------------------------- */
+
+   .main-contain .about-company-links table{
+          width: 300px;
+          height: 200px;
+          background-color:#121212;
+          margin-top: 2.5rem;
+   }
+
+   .main-contain .about-company-links table tr th{
+    color: white;
+    font-size: .47rem;
+    position: relative;
+    top: -60px;
+    left: -8px;
+    
+   }
+
+   .main-contain .about-company-links table tr td{
+    position: relative;
+    top: -135px;
+    left: 10px;
+   }
+
+   .main-contain .about-company-links table tr td a{
+       font-size: 0.45rem;
+       color: rgba(255, 255, 255, 0.646);
+       text-decoration: none;
+
+      
+   }
+
+   .main-contain .about-company-links table tr a{
+     position: absolute;
+     margin: .9rem;
+  
+
+   }
+
+   .main-contain .about-company-links table tr a:hover{
+    border-bottom: 0.5px solid;
+    margin: 1rem;
+    color: white;
+   }
+
+   .main-contain .social-media-logo ul{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 620px;
+   }
+   .main-contain .social-media-logo ul li{
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-color:#242424;
+    border-radius:50%;
+    margin-right: .40rem;
+
+   }
+   
+    .main-contain .social-media-logo ul li:hover{
+       background-color: #8d8d8d;
+    }
+
+   
+   .main-contain .social-media-logo ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: .5rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 6px;
+   }
+
+   .main-contain  .copyright{
+      width: 94%;
+      height: 200px;
+      display: flex;
+      border-top: 0.1px rgba(255, 255, 255, 0.329) solid;
+      padding: 15px 0px;
+      position: relative;
+      top: -100px;
+      left: 20px;
+   }
+
+   .main-contain  .copyright i
+   {
+    font-size: .4rem;
+    color: white;
+    margin-right:3px;
+    position: relative;
+    top: 8.6px;
+   }
+   
+   .main-contain  .copyright h4
+   {
+    font-size: .4rem;
+    color: white;
+    font-weight: lighter;
+   }
+
+
+
+
+
+
+
+
+   /* -----------------------------------------------------Music-player started------------------------------------------------------ */
+
+
+.music-player{
+    width: 100%;
+    height: 40px;
+    grid-area:music-player;
+    background-color:#090909ed;
+    position:fixed;
+    bottom: 0;   
+    margin:.3rem;
+}
+
+
+.music-player .music-player-btn{
+     width: 50px;
+     height: 20px;
+     position: relative;
+     top: -10px;
+     left:300px;
+}
+
+.music-player .music-player-btn ul{
+    display: flex;
+}
+
+.music-player .music-player-btn ul li{
+    list-style: none;
+    margin-right:.7rem;  
+}
+
+.music-player .music-player-btn ul li i{
+    font-size: .7rem; 
+    color: #535252;
+    transition: all .4s;
+  
+}
+
+.music-player .music-player-btn ul li i:hover{
+    color: #a2a2a2;
+}
+
+.music-player .music-player-btn ul li:nth-child(3) i
+{
+   font-size: 1.1rem;
+   margin-top: 2px;
+}
+
+.music-player .music-player-btn ul li:nth-child(2) i{
+    transform: rotate(180deg);
+}
+
+
+.music-player .range input{
+    width:280px;
+    height: 1px;
+    position: relative;
+    top:-20px;
+    left:249px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.music-player .range input::-webkit-slider-runnable-track{
+    width:280px;
+    height: 1px;
+    border-radius: 2;
+    background-color: #535252;
+}
+
+
+.music-player .range input::-webkit-slider-thumb{
+    appearance: none;
+    height: 5px;
+    width: 5px;
+}
+
+.music-player .speaker-icon ul{
+   display: flex;
+   position: relative;
+   bottom:65px;
+   left:600px;
+
+}
+
+.music-player .speaker-icon ul li{
+    list-style: none;
+
+}
+
+.music-player .speaker-icon ul li i{
+    font-size: .45rem;
+    color:rgba(255, 255, 255, 0.792);
+    margin-right: .4rem;
+    font-size: .50rem;
+}
+
+.music-player .speaker-icon ul li i:hover{
+    color: rgb(255, 255, 255);
+}
+
+.music-player .speaker-icon ul li input{
+    width: 50px;
+    height: 1.5px;
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+    appearance: none;
+    
+}
+
+.music-player .speaker-icon ul li input::-webkit-slider-runnable-track{
+    width: 50px;
+    height: 1.5px;
+    border-radius: 7px;
+}
+
+ .music-player .speaker-icon ul li input::-webkit-slider-thumb{
+    appearance: none;
+ 
+} 
+
+.music-player .speaker-icon ul li:nth-child(4) i{
+    margin-right: -2px;
+}

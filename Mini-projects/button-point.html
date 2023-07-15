@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .btn{
+            background-color: blue;
+            width: 130px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px white solid;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn .inner{
+            content: "";
+            height: 0px;
+            width: 0px;
+            background-color: red;
+            transform: translate(-50% -50%);
+            position: absolute;
+            border-radius: 1px;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: all .5s; 
+        }
+
+        .btn:hover .inner{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: absolute;
+           pointer-events: none;
+           transform: translate(-50% , -50%);
+        }
+
+        .btn span{
+            position: relative;
+            z-index: 99;
+            font-size: 26px;
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="#"class="btn"><span class="spn">Button</span><div class="inner"></div></a>
+</body>
+ 
+<script> 
+   const btn = document.querySelector(".btn");
+   const inner = document.querySelector(".inner")
+btn.addEventListener("mousemove",(jbr)=>{
+let x =jbr.x-btn.offsetLeft;
+let y =jbr.y-btn.offsetTop;
+
+console.log("x -:"+x+"y-:"+y);
+
+// let x =jbr.pageX-btn.offsetLeft;
+// let y= jbr.pageY-btn.offsetTop;
+
+  inner.style.left=x+"px"
+  inner.style.top=y+"px"
+})
+</script>    
+</html>

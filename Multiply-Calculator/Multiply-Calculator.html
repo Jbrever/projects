@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:cursive;
+           }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:rgb(242, 242, 15);
+        }
+      #container
+      {
+        background-color:white;
+        width: 200px;
+        height: 130px;
+        position: relative;
+        
+      }
+         
+      #score{
+        position:absolute;
+        top:7px;
+        right: 4px;
+        font-size: 11px;
+        color:rgb(14, 129, 14);
+      }
+    
+      #question{
+        position: absolute;
+        top:32px;
+        left:6px;
+        font-size: 12px;
+        text-transform: capitalize;
+        letter-spacing: 1.3px;
+        font-weight:bold;
+      }
+
+      #input{
+        width: 94%;
+        position:absolute;
+        bottom:45px;
+        right: 6px;
+        border: none;
+        border:rgb(14, 129, 14) 1.6px solid;
+        padding:2px;
+      }
+      
+      #input:focus{
+        outline: none;
+      }
+    
+
+      #btn{
+        width: 94%;
+        height: 22px;
+        position: absolute;
+        right:6px;
+        bottom:15px ;
+        background-color:rgb(12,129,14);
+        color: white;
+        border: none;
+        font-size: 11px;
+      }
+      
+      #btn:active{
+        width: 92%;
+        height: 20px;
+        right: 8px;
+        bottom: 16px;
+      }
+
+     #reset{
+          width: 30px;
+          height: 15px;
+          font-size: 8px;
+          padding:px;
+          background-color:rgb(12,129,14) ;
+          color: white;
+          position:absolute;
+          left:10px;
+          top:7px;
+          border: none;
+          
+     }
+
+     #reset:active{
+          width: 25px;
+          height: 13px;
+          top:7px;
+          left:8px;
+          font-size: 5px;
+     }
+     
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+     <form id="form">
+        <span id="question">what is 1 multiply by 1 ?</span>
+
+        <input type="number" autofocus placeholder="Enter your answer" id="input">
+        
+        <button type="submit" id="btn">Submit</button> 
+
+        <button type="reset" id="reset">Reset</button>
+        
+        <div id="score">score-:0</div>
+      
+    </form>
+    </div>
+</body>
+<script>
+
+let ranNum1 = Math.floor(Math.random()*10);
+let ranNum2 = Math.floor(Math.random()*15);
+
+ranNum2 = ranNum2 <10 ? "0" + ranNum2 : ranNum2 ;
+      
+question.innerText = `what is ${ranNum1} multiply by ${ranNum2}?`
+
+let correctAns = ranNum1*ranNum2
+let input = document.getElementById("input")
+let form  = document.getElementById("form");
+let scoreNum = JSON.parse(localStorage.getItem("scoreNum"))
+let score = document.getElementById("score")
+score.innerText = `score-: ${scoreNum}`
+
+form.addEventListener("submit", function()
+{     
+      let userAns = Number.parseInt(input.value)
+
+     if(correctAns ===userAns)
+     {
+      scoreNum++;
+      scorevalue()
+     }
+     else{
+      scoreNum--;
+      scorevalue()
+     }
+
+     function scorevalue()
+{
+  localStorage.setItem("scoreNum" ,  JSON.stringify(scoreNum))
+}
+
+     
+})
+
+
+
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background-image:url("Image/nick-wright-euH5c6YgMRE-unsplash.jpg");
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        /* cursor: none; */
+    }
+    span{
+        width:100px;
+        height:100px;
+        background-image:url("image/2530804_general_heart_heart beat_heart disease_heart rate_icon.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50% , -50%);
+        animation: heart 4s  linear;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bolder;
+
+    }
+    @keyframes heart{
+        0%{
+           filter: hue-rotate(0deg);
+           transform: translate(-50% , -50%);
+        }
+
+        100%{
+            filter: hue-rotate(720deg);
+            transform: translate(-50% , -905px);
+        }
+    }
+</style>
+</head>
+<body>
+   
+</body>
+<script>
+
+
+let body1 = document.querySelector("body");
+
+
+body1.addEventListener("mousemove",(jbr)=>{
+    
+    let span1 = document.createElement("span");
+    let text = document.createTextNode("")
+
+     
+    span1.appendChild(text);
+
+    body1.appendChild(span1);
+    console.log(body1);
+
+    let x = jbr.clientX;
+    let y = jbr.clientY;
+    span1.style.left = x+"px";
+    span1.style.top =  y+"px";
+
+    let random = Math.floor(Math.random()*100);
+    console.log(random)
+     
+    span1.style.width = random +"px"
+    span1.style.height = random +"px"
+    span1.style.fontSize = random/5+ "px"
+     
+    
+
+    setTimeout(()=>{
+       span1.remove();
+    },3500)
+    
+    
+
+})  
+
+</script>
+</body>
+</html>

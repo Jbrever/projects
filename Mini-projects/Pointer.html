@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        cursor: none;
+    }
+    .main{
+        font-family: arial;
+        font-size: 26px;
+        text-transform: capitalize;
+        color: blueviolet;
+        cursor: none;
+    }
+   
+    .pointer{
+         border: solid 2px white;
+         width: 15px;
+         height:15px;
+         border-radius: 50%;
+         position: absolute;
+         left: 10px; 
+         cursor: none;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+    }
+
+    .main:hover + .pointer{
+        width: 130px;
+        height:130px;
+        border:6px dashed var(--jbr);
+        animation: rotate 5s infinite linear;
+        position: absolute;
+    }
+    @keyframes rotate{
+        0%{
+            transform: translate(-50% , -50% ) rotate(0deg);
+         
+        }
+
+        100%{
+            transform: translate(-50% , -50% ) rotate(360deg);
+          
+        }
+    }
+    .emoji{
+        font-size: 25px;
+    }
+
+</style>
+
+</head> 
+
+<body>
+    <div class="main" >
+       don't place the pointer here!!!;
+    </div>
+    <div class="pointer" style="--jbr:white;">
+    </div>
+    <div class="emoji"1>&#128548</div>
+</body>
+<script>
+    let main = document.querySelector(".main")
+    let pointer = document.querySelector(".pointer")
+
+    document.addEventListener("mousemove",function(jbr){
+        let x = jbr.x;
+        let y = jbr.y;
+
+
+        pointer.style.left = x+"px"
+        pointer.style.top = y+"px"
+
+        main.addEventListener("mouseenter",function()
+        {
+            main.innerText = "Please remove the pointer !!!"
+        })
+
+        main.addEventListener("mouseleave",function()
+        {
+            main.innerText = "Don't put the pointer again!! "
+        })
+        
+    });
+
+
+</script>
+</html>

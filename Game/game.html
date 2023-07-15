@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: aliceblue;
+}
+
+#canvas{
+    width: 600px;
+    height: 600px;
+    border:2px solid black;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+}
+
+</style>
+</head>
+<body>
+    <canvas id="canvas">
+        
+    </canvas>
+</body>
+<script>
+
+let canvas1 = document.getElementById("canvas");
+const cxt =canvas1.getContext('2d');
+const charimage = new Image();
+charimage.src = 'shadow_dog.png';
+
+const canvawidth = canvas1.width=600;
+const canvasheight = canvas1.height=600;
+
+const piche = 523; 
+const picwid = 575 ; 
+let x = 0;
+let y = 0;
+let frams = 7;
+document.addEventListener("keypress",function(event){
+    let keypressed = event.keyCode;
+    
+    if(keypressed ==100){
+        run();
+    }
+    
+    else if(keypressed==97)
+    {
+      stop();
+    }
+   
+    else if(keypressed==116)
+    {
+        tired();
+    }
+
+    else if(keypressed==114)
+    {
+       y = 6;
+       frams = 6;
+       setTimeout(()=>
+       {
+        y = 0;
+        frams = 7;
+       },600);
+
+
+    }
+
+    else if(keypressed==106)
+    {
+        jump();
+    }
+
+    else if(keypressed==99)
+    {
+        chakr();
+    }
+    
+    
+});
+function run(){
+y = 3;
+frams = 9;
+}
+
+function stop(){
+    y=0;
+    frams=7;
+}
+
+function tired(){
+
+    y=8;
+    frams=11;
+    setTimeout(()=>
+    {
+        y=0;
+        frams=7;
+    },1100);
+    
+    
+}
+
+
+function jump()
+{
+    y=1;
+    frams=6;
+    setTimeout(()=>{
+    y=0;
+    frams=7;
+    },700)
+}
+
+function chakr()
+{
+    y=4;
+    frams=10;
+    setTimeout(() => {
+      y=0;
+      frams=7;  
+    },2000);
+}
+
+setInterval(
+function addpic(){
+   cxt.clearRect(0,0,600,600)
+   cxt.drawImage(charimage,x*picwid,y*piche,picwid,piche,0,0,600,600);
+  
+x++;
+if(x==frams){
+    x=0;
+
+}
+    
+},100)
+
+addpic();
+
+
+</script>
+</html>

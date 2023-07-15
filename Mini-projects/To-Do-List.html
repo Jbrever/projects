@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family:cursive;
+        text-transform: capitalize;
+    }
+    body{
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container{
+        width: 300px;
+        height: 350px;
+        background-color:#121212;
+        border-radius: 20px;
+        box-shadow:15px 5px 75px 15px rgba(0, 0, 0),2px 2px 22px 7px rgba(0, 0, 0, 0.25),
+    inset 10px 1px 70px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset 5px 5px 10px rgba(255,255,255,0.2),
+    inset -5px -5px 20px rgba(14, 14, 14, 0.2),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.2);
+    
+    overflow: scroll;
+  
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+
+    .heading{
+        font-size:25px;
+        margin: 25px 80px;  
+        font-weight: bolder;      
+        color: white;
+
+    }
+
+    .main{
+        width: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 10px;
+    }
+
+    .input{
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        position: relative;
+        left:23px;
+        padding-left:15px ;
+        position: absolute;
+        z-index:1;
+        box-shadow:inset -5px -5px 10px rgba(8, 6, 6, 0.2),
+         5px 5px 10px 2px rgba(0, 0, 0, 0.676),
+         inset -5px -5px 15px 1px rgb(14, 14, 14),
+         5px -5px 1px rgba(0, 0, 0, 0.2);
+    ;
+    }
+    .input::placeholder{
+        margin-left: 60px;
+        font-size: 13px;
+       color: #121212;        
+        
+    }
+
+    .btn{
+        background-color: red;
+        width: 105px;
+        height: 40px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding-left:35px;
+        padding-top:7px;
+        color: white;
+        position:absolute;
+        right: -39px;
+        z-index: 1;
+        box-shadow:inset -5px -5px 10px rgba(8, 6, 6, 0.2),
+         inset -5px -5px 15px 0.1px rgb(14, 14, 14);
+        
+    }
+    .btn:active{
+        width: 100px;
+        height: 38px;
+        right: -37px;
+      
+    }
+
+    ul{
+        position: relative;
+        height: 80%px;
+        display: flex;
+        flex-direction: column;
+        margin:50px 25px;
+        overflow:hidden;
+    }
+
+    /* ::-webkit-scrollbar-track{
+        box-shadow:inset 0 0 15px black;
+        
+    }
+
+    ::-webkit-scrollbar{
+        width:5px;
+
+
+    }
+    ::-webkit-scrollbar-thumb{
+        background: white;
+    } */
+
+    li{
+        width: 72%;
+        height: 30px;
+        color: white;
+        text-transform: none;
+        list-style: none;
+        margin-bottom:13px;
+        border-radius: 20px;
+        background-color: rgb(0, 64, 255);
+        padding-top:3px;
+        padding-left:36px;
+        box-shadow: inset -5px -5px 6px  rgba(0, 0, 0, 0.566);
+        position: relative;
+    }
+     
+    li::first-letter{
+        text-transform: capitalize;
+    }
+
+    li i{
+        width: 23px;
+        height: 23px;
+        background-color: red;
+        position:absolute;
+        left:227px;
+        top: 5px;
+        border-radius: 50%;
+        box-shadow:inset -5px -5px 10px rgba(8, 6, 6, 0.2),
+         inset -1px -1px 4px  rgb(14, 14, 14);
+
+    }
+
+
+    li i:active{
+        width: 26px;
+        height: 26px;
+    
+    }
+
+    li div{
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(16, 38, 125);
+        border-radius: 50%;
+        box-shadow:inset -5px -5px 10px rgba(8, 6, 6, 0.2),
+         inset -1px -1px 4px  rgb(14, 14, 14);
+        
+
+    }
+    li div:hover{
+        background-color: rgb(186, 188, 188);
+    }
+
+    
+
+
+    li i::before{
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 4px;
+        width: 14px;
+        height: 2px;
+        background-color: white;
+        transform: rotate(45deg);
+    }
+
+    li i::after{
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 4px;
+        width: 14px;
+        height: 2px;
+        background-color: white;
+        transform: rotate(-45deg);
+    }
+
+
+
+
+</style>
+</head>
+<body>
+    
+    <div class="container">
+      <div class="upper">
+
+        <div class="heading">
+            to-do list
+        </div>
+        
+        <div class="main">
+            <input type="text" class="input" placeholder="add your task" autofocus>
+            <div class="btn">add</div>
+        </div>  
+      </div>
+      
+        
+
+        <ul>
+           
+        </ul>
+
+    </div>
+
+</body>
+<script>
+    
+let ul=document.querySelector("ul");
+let input = document.querySelector(".input");
+let btn =document.querySelector(".btn")
+let li = document.createElement("li");
+
+btn.addEventListener("click",()=>{
+    if(input.value == "")
+    {
+      alert("please Add something!!")
+     
+    }
+
+    else{
+
+        let textvalue = input.value;
+
+        let li = document.createElement("li");
+  
+        ul.insertBefore(li , ul.childNodes[0]);
+     
+        li.innerHTML =`${textvalue}<i></i><div></div>`
+        
+        let cross = li.querySelector("i");
+        cross.addEventListener("click",()=>{
+            li.remove();
+        })
+
+        let circle = li.querySelector("div");
+    
+        circle.addEventListener("click",()=>{
+            circle.style.backgroundColor ="red"
+        })
+        
+
+
+        li.addEventListener("click",()=>{
+            li.style.backgroundColor ="red"
+            setTimeout(function(){
+                li.style.backgroundColor =""
+            },500)
+        })
+        
+   
+    
+    }
+
+ input.value ="";
+    
+})
+
+
+
+
+
+
+
+
+</script>
+</html>
