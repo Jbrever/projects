@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: yellow;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+.container{
+    height: 350px;
+    width: 600px;
+    background-color: yellow;
+    border: 15px white solid ;
+    box-shadow: 0 0 15px;
+    background: url("images/simpsons-0.jpg");
+    background-position: center;
+    background-size: cover;
+    transition: 1s;
+    /* animation: bgcolor 5s infinite linear; */
+}
+
+@keyframes bgcolor{
+        0%{
+            filter: hue-rotate(0deg);
+        }
+        100%{
+            filter: hue-rotate(360deg);
+        }
+    }
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(0, 0, 0); 
+    position: relative;
+    
+}
+
+.buttons .btn-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    right: -40px;
+    bottom: -135px;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 7px;
+}
+.buttons .btn-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(180deg);
+    border-radius: 5px;
+    box-shadow: 0 -1.5px 7px;
+    position: relative;
+    left:-37px;
+    top:140px;
+}
+
+.buttons .btn-left:active{
+transform: scale(.9) rotate(180deg);
+}
+
+.buttons .btn-right:active {
+transform: scale(.9);
+}
+
+
+
+</style>
+
+</head>
+<body>
+   <div class="container">
+    
+    <div class="buttons">
+        <div class="btn btn-left" onclick="leftbtn()"><i class="fa-solid fa-play"></i></div>
+        <div class="btn btn-right" onclick="rightbtn()" ><i class="fa-solid fa-play"></i></div>
+    </div>
+    
+   </div>
+</body>
+<script>
+let container = document.querySelector(".container");    
+let arrayImg = ["0","1","2","3","4","5","6","7","8"];
+let arrayLenght = arrayImg.length;
+console.log("lenght-:"+arrayLenght)
+let index = 0;
+
+function rightbtn(){
+  
+    if(index<arrayLenght-1){
+    index++;
+    console.log("rigthindex-:"+index);
+    container.style.background = `url('images/simpsons-${arrayImg[index]}.jpg')`
+    container.style.backgroundSize ="cover";
+    container.style.backgroundPosition ="center"
+    }
+
+} 
+
+function leftbtn(){
+    if(index>0)
+    {index--
+     console.log("leftindex-:"+index)
+     container.style.background = `url('images/simpsons-${arrayImg[index]}.jpg')`
+     container.style.backgroundSize="cover"
+     container.style.backgroundPosition="center"
+    }
+}
+
+
+
+</script>
+</html>
