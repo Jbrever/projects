@@ -17,7 +17,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
+    }
+
+    body.active{
+        filter: blur(3.7px);
     }
 
 .container{
@@ -87,6 +91,18 @@ transform: scale(.9) rotate(180deg);
 .buttons .btn-right:active {
 transform: scale(.9);
 }
+.card{
+    position: relative;
+}
+
+.crossBtn{
+    color: white;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    font-size: 25px;
+    font-family: arial;
+}
 
 
 
@@ -95,7 +111,9 @@ transform: scale(.9);
 </head>
 <body>
    <div class="container">
-    
+    <div class="card">
+      <div class="crossBtn">X</div>
+    </div>
     <div class="buttons">
         <div class="btn btn-left" onclick="leftbtn()"><i class="fa-solid fa-play"></i></div>
         <div class="btn btn-right" onclick="rightbtn()" ><i class="fa-solid fa-play"></i></div>
@@ -103,7 +121,9 @@ transform: scale(.9);
     
    </div>
 </body>
+
 <script>
+let body = document.querySelector("body");    
 let container = document.querySelector(".container");    
 let arrayImg = ["0","1","2","3","4","5","6","7","8"];
 let arrayLenght = arrayImg.length;
@@ -118,6 +138,10 @@ function rightbtn(){
     container.style.background = `url('images/simpsons-${arrayImg[index]}.jpg')`
     container.style.backgroundSize ="cover";
     container.style.backgroundPosition ="center"
+    }
+    else {
+       body.classList.toggle("active")
+       
     }
 
 } 
