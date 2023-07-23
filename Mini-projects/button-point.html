@@ -26,6 +26,7 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
+         
         }
         
         .btn .inner{
@@ -38,7 +39,7 @@
             border-radius: 1px;
             border-radius: 50%;
             pointer-events: none;
-            transition: all .5s; 
+            transition: .5s; 
         }
 
         .btn:hover .inner{
@@ -69,8 +70,9 @@
 btn.addEventListener("mousemove",(jbr)=>{
 let x =jbr.x-btn.offsetLeft;
 let y =jbr.y-btn.offsetTop;
-
-console.log("x -:"+x+"y-:"+y);
+console.clear();
+console.log("client-:"+jbr.clientX +" clienty-:"+jbr.clientY)
+console.log("offsertx -:"+btn.offsetLeft+" offsety-:"+btn.offsetTop);
 
 // let x =jbr.pageX-btn.offsetLeft;
 // let y= jbr.pageY-btn.offsetTop;

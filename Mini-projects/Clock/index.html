@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color:#cdcdcd;
+    }
+.main{
+    background: rgba(186, 181, 181, 0.6);
+    width: 330px;
+    height: 330px;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 15px 15px 15px inset rgb(255, 255, 255),
+               -15px -15px 15px inset rgba(31, 31, 31, 0.507),
+               15px 15px 20px rgba(51, 50, 50, 0.922);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.circle{
+height: 260px;
+width: 260px;
+background-color: rgb(7, 7, 86);
+border-radius: 50%;
+box-shadow: 4px 3px 10px inset rgb(255, 255, 255);
+
+}
+.circle::before{
+    content: "";
+    height: 185px;
+    width: 185px;
+    border-radius: 50%;
+    position: absolute;
+    inset: 73px;
+    background: linear-gradient(blue,rgb(255, 0, 166));
+    animation:rotate 1s infinite linear ;
+    
+}
+
+.circle::after{
+    content: '';
+    height: 175px;
+    width: 175px;
+    background-color: rgb(7,7,86);
+    position: absolute;
+    border-radius:50%;
+    position: absolute;
+    inset: 78px;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotateZ(0deg);
+    }
+
+    0%{
+        transform: rotateZ(360deg);
+    }
+}
+
+span{
+    position: absolute;
+    inset:40px;
+    transform: rotate(calc(90deg * var(--rotate)));
+    font-size: 1.6rem;
+    color: white;
+    font-family: arial;
+    font-weight: bolder;
+    text-align: center;
+}
+span b{
+    display:block;
+    transform: rotate(calc(270deg * var(--rotate)));
+}
+
+.niddle{
+    position: relative;
+    z-index: 1;
+}
+
+.sec{
+    background-color: red;
+    width: 3px;
+    height: 75px;
+    position: absolute;
+    top: 60px;
+    left: 134px;
+    transform-origin: bottom;
+    z-index: 10;
+
+
+}
+.mint{
+    background-color: white;
+    width: 5px;
+    height: 67px;
+    position: absolute;
+    transform-origin: bottom;
+    top: 70px;
+    left:134px;
+    z-index: -1;
+}
+
+.hour{
+    background-color:greenyellow ;
+    width: 5px;
+    height: 60px;
+    position: absolute;
+    transform-origin: bottom;
+    top: 76px;
+    left:134px;
+}
+
+.point{
+     background-color: white;
+     width:15px;
+     height:15px;
+     border-radius:50%;
+     position: absolute;
+     inset: 127px;
+     z-index: 1000;
+     border: 2px red solid;
+
+}
+
+</style>
+
+</head>
+<body>
+<div class="main">
+  <div class="circle">
+<div class="niddle" >
+     <div class="point"></div>
+     <div class="sec"></div>
+     <div class="mint"></div>
+     <div class="hour"></div>
+</div>
+
+    <span style="--rotate:0;"><b>12</b></span>
+    <span style="--rotate:1;"><b>3</b></span>
+    <span style="--rotate:2;"><b>6</b></span>
+    <span style="--rotate:3;"><b>9</b></span>
+
+</div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+gsap.to(".main",{
+y:200,
+duration: 2,
+ease:"bounce",
+})
+
+    let sec = document.querySelector(".sec");
+    let mint = document.querySelector(".mint");
+    let hour = document.querySelector(".hour");
+   
+    clock=()=>{
+        let s = new Date().getSeconds()
+        let m = new Date().getMinutes()
+        let h = new Date().getHours();
+        let hh = (h%12)*30+m/2;
+        sec.style.transform = `rotate(${s*6}deg)`
+        mint.style.transform= `rotate(${m*6}deg)`     
+        hour.style.transform= `rotate(${hh}deg)`
+        console.log(hh.m);
+         
+       
+        setInterval(()=>{
+             clock();
+        },1000)
+
+    }
+
+
+    clock();
+
+</script>
+
+</html>

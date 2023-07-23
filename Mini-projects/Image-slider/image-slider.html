@@ -102,6 +102,7 @@ transform: scale(.9);
     right: 40px;
     font-size: 25px;
     font-family: arial;
+    cursor: pointer;
 }
 
 
@@ -111,9 +112,7 @@ transform: scale(.9);
 </head>
 <body>
    <div class="container">
-    <div class="card">
-      <div class="crossBtn">X</div>
-    </div>
+   
     <div class="buttons">
         <div class="btn btn-left" onclick="leftbtn()"><i class="fa-solid fa-play"></i></div>
         <div class="btn btn-right" onclick="rightbtn()" ><i class="fa-solid fa-play"></i></div>
@@ -123,7 +122,8 @@ transform: scale(.9);
 </body>
 
 <script>
-let body = document.querySelector("body");    
+let body = document.querySelector("body");
+let crossBtn = document.querySelector("crossBtn");   
 let container = document.querySelector(".container");    
 let arrayImg = ["0","1","2","3","4","5","6","7","8"];
 let arrayLenght = arrayImg.length;
@@ -139,10 +139,7 @@ function rightbtn(){
     container.style.backgroundSize ="cover";
     container.style.backgroundPosition ="center"
     }
-    else {
-       body.classList.toggle("active")
-       
-    }
+    
 
 } 
 
