@@ -32,8 +32,6 @@
             justify-content: space-between;
             transition: 0.5s;
             z-index: 0;
-
-          
         }
         .nav.active{
             background-color: rgb(7, 7, 90);
@@ -46,10 +44,22 @@
            margin-top: 5px;
         }
 
+        .nav .marker{
+            background-color: rgb(22, 108, 80);
+            width: 100px;
+            height: 40px;
+            position: relative;
+            top: 20px;
+            left: -7px;
+            transform: translateX(130px);
+        }
+
         .nav .links ul{
             display: flex;
             margin-top: 10px;
             margin-right: 20px;
+            position: relative;
+            top: -20px;
         }
         .nav .links ul li{
             list-style: none;
@@ -99,6 +109,9 @@
             <i class="fa-solid fa-shield-cat"></i>
          </div>
          <div class="links">
+            <div class="marker">
+
+            </div>
             <ul>
                 <li><a href="#"><i class="fa-solid fa-house"></i> home</a></li>
                 <li><a href="#"><i class="fa-solid fa-box"></i> product</a></li>
@@ -171,11 +184,11 @@ Sit iste libero quae ratione exercitationem impedit, saepe sunt earum accusamus 
 let name = document.querySelector(".name");
 let nav = document.querySelector(".nav");
 let bgimage = document.querySelector(".bgimage");
-let li = document.querySelector("li");
+let li1 = document.querySelectorAll("li a");
+let marker = document.querySelector(".marker")
 
-// li.forEach(element => {
-//     console.log(element.target);
-// });
+
+ 
 
 window.addEventListener("mousemove",(jbr)=>{
     let x = jbr.clientX;
