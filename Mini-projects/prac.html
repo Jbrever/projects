@@ -1,48 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    body{
-        background-color: #121212;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    
-    .main{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .btn{
-        
-        width: 250px;
-        height: 200px;
-    }
-</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Drusdsdsfs</h1>
-    <div class="main">
-        <button class="btn"><img src="" alt=""></button>
-        <button class="btn"><img src="" alt=""></button>
-        <button class="btn"><img src="" alt=""></button>
-        <button class="btn"><img src="" alt=""></button>    
-    </div>
+    
 </body>
 <script>
+    
+    let obj={
+         eng:20,
+         hindi:10,
+         sci:30,
+         maths:40,
+        obb(){
+            
+           let avg =(this.eng+this.maths+this.sci/3);
+           console.log(avg);     
+        }
+    }
 
-
-  
-
+obj.obb();
 
 </script>
 </html>

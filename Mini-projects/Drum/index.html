@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background:radial-gradient(rgb(255, 0, 0),rgb(0, 0, 0));
+        height: 100vh;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        font-family: cursive;
+    }
+    .heading{
+        font-size: 90px;
+        text-transform: capitalize;
+        position:relative;
+        top: 00px;
+        color: rgb(185, 180, 180);
+        background-image: url("https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+        background-position:center;
+        background-size: cover;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      animation:bg 15s infinite linear;
+    }
+    @keyframes bg{
+       
+       10%{
+            background-position:top;
+           
+        }
+
+        100%{
+            background-position:bottom;
+        }
+        
+    }
+
+    p{
+       color: white;
+    }
+    
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+        
+    }
+
+    .btn{
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+        background:white;
+        border: none;
+        padding: 10px;
+        position: relative;
+        top:0px;
+    }
+
+
+    .btn:active{
+        transform: scale(0.95);
+    }
+  
+     .btn .img{
+           height: 100%;
+           width: 100%;
+           border-radius: 10px;
+           
+     }
+
+     .btn h2{
+        position: absolute;
+        top:20px;
+        transform: translateX(50%);
+        color: white;
+        text-transform:uppercase;
+        font-family: cursive;
+     }
+
+     audio{
+        position: absolute;
+        bottom: 30px;
+        left:20px;
+        width: 210px;
+        height: 30px;
+        
+     }
+     audio:active{
+        transform: scale(1.1);
+     }
+
+    .btn:first-child audio{
+         left:20px;
+     }
+
+     .btn.active audio{
+        position: absolute;
+        bottom: -50px;
+   
+     }
+
+     @media screen and (max-width:400px){
+       .heading{
+        font-weight: bolder;
+        font-size:80px;
+       }
+       
+        .btn{
+            width: 170px;
+            height: 140px;
+            padding:5px;
+            top: -10px;
+        }
+
+        .btn h2{
+            font-size: 15px;
+        }
+     }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+</body>
+<script src="index.js"></script>
+</html>

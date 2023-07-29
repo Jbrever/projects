@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: cursive;
+    }
+    body{
+        background-color: #121212;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .heading{
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:#121212;
+        width: 100%;
+    
+        z-index: 1;
+    }
+    .heading h1{
+        color: white;
+        font-size: 50px;
+        margin-top:20px;
+        position: relative;
+        top: -200px;
+    }
+    .heading button{
+        padding: 5px;
+        border: rgb(238, 18, 18) solid 5px;
+        color:red;
+        margin: 20px;  
+        font-size: 25px;
+        position: relative;
+        top: -200px;
+    }
+    .heading button:active{
+        transform: scale(0.95);
+    }
+    .heading button:hover{
+        filter: brightness(.7);
+    }
+
+    .heading .scrolldown{
+        color: white;
+        position: absolute;
+        left: -100px;
+        top: 125px;
+    }
+
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        margin-top: 200px;
+        
+    }
+    
+    .container .bg{
+         width: 300px;
+         height: 200px;
+         background-color: aqua;
+         margin: 10px;
+         border-radius: 10px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size:20px;
+         font-weight: bolder;
+   
+       
+        }
+
+        .container .bg:active{
+            transform: scale(0.95);
+        }
+
+        .container .bg:hover{
+            filter: brightness(0.5);
+        }
+
+        @media screen and (max-width:400px){
+            .heading h1{
+                font-size: 25px;
+         }
+
+         .heading button{
+              font-size: 20px;
+           }
+             
+           .container{
+             margin-top: 150px;
+              
+           }
+           .container .bg{
+            width: 150px;
+            height: 100px;
+            font-size: 15px;
+
+           }
+           .heading button:active{
+             transform: scale(1);
+           }   
+
+    .heading .scrolldown{
+        color: white;
+        position: absolute;
+        left: -100px;
+        top: 117px;
+   }
+
+        }
+
+
+       
+
+
+</style>
+</head>
+<body>
+ 
+    <div class="heading">
+    <h1>Random Color Generator</h1>
+    <button>Change Color</button>
+    <div class="scrolldown">Scroll Down</div>    
+   </div>
+   
+        <div class="container">
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="index.js"></script>
+</html>
