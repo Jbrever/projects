@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #121212;
+    }
+    .head{
+        margin-top: 20px;
+        display: flex;
+        gap:5px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .head :nth-child(1){
+        font-size: 40px;
+        text-transform: capitalize;
+
+    }
+    .head :nth-child(2){
+        font-size: 20px;
+        color: red;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+    .cards{
+        height: 220px;
+        width: 300px;
+        background-color:var(--color);
+        border-radius: 15px;
+        border: white 5px solid;
+        margin-bottom:20px ;
+    }
+    .cards:active{
+        transform: scale(0.98);
+    }
+    .flash{
+        background-color: white;
+        background-image:url("https://e7.pngegg.com/pngimages/861/742/png-clipart-fifa-18-just-for-laughs-comedy-festival-fifa-17-batdad-just-for-laughs-gags-men-s-expression-of-surprise-men-s-blue-dress-shirt-illustration-face-people-thumbnail.png");
+        background-position: center;
+        background-size: 200px;
+        background-repeat: no-repeat;
+    }
+
+    .userflash{
+        background-color: white;
+        background-image:url("https://assets.stickpng.com/images/58967e8c0803320bf17c2fb7.png");
+        background-position: center;
+        background-size: 220px;
+        background-repeat: no-repeat;
+    }
+
+    
+
+    button{
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        color: black;
+    }
+    
+    button:active{
+        transform: scale(0.9);
+    }
+    @media screen and (max-width:400px){
+       .cards{
+           height: 100px;
+           width:150px ;
+       }
+       .container{
+        margin-top: 40px;
+       }
+       .head :nth-child(2){
+        font-size: 15px;
+        margin-top: 5px;
+       }
+       .flash{
+        background-size: 80px;
+       }
+       .userflash{
+        background-size: 100px;
+       }
+    }
+    
+ 
+</style>
+</head>
+<body>
+    <div class="head">
+        <h1 class="heading">simon game</h1>
+        <h2 class="level">Press Button to start the game</h2>    
+    </div>
+    
+    <div class="container">
+  
+       <div class="line1"> 
+
+          <div type="button" class="cards red" style="--color:rgb(201, 25, 25);"></div>
+          <div  type="button" class="cards orange" style="--color:rgb(255, 111, 0);"></div>
+
+        </div>
+
+       <div class="line2">
+ 
+          <div  type="button" class="cards blue" style="--color:rgb(23, 184, 216);"></div>
+          <div  type="button" class="cards purple"  style="--color:rgb(92, 3, 170);"></div>
+
+       </div> 
+
+    </div>
+    <form action=""></form>
+    <button>Start</button>
+</body>
+<script src="index.js"></script>
+</html>
